@@ -1,0 +1,58 @@
+{
+    "name": "Runalize",
+    "id": "runalize",
+    "version": "0.01",
+    "packaging_format": 1,
+    "description": {
+        "en": "Runalyze is a web application for analyzing your training",
+        "fr": "Runalyze est une application web pour analyser vos entrainements"
+    },
+    "url": "https://runalyze.com",
+    "license": "???",
+    "maintainer": {
+        "name": "plopoyop",
+        "email": "clement@plopoyop.me",
+        "url": "https://github.com/plopoyop"
+    },
+    "requirements": {
+        "yunohost": ">> 2.6.4"
+    },
+    "multi_instance": false,
+    "services": [
+        "nginx",
+        "mysql",
+        "php-fpm"
+    ],
+    "arguments": {
+        "install" : [
+            {
+                "name": "domain",
+                "type": "domain",
+                "ask": {
+                    "en": "Choose a domain for your runalyse application",
+                    "fr": "Choisissez un domaine pour votre application runalyse"
+                },
+                "example": "domain.org"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "ask": {
+                    "en": "Is it a public application?",
+                    "fr": "Est-ce une application publique ?"
+                },
+                "default": true
+            },
+            {
+                "name": "path",
+                "type": "path",
+                "ask": {
+                    "en": "Choose a path for runalyse",
+                    "fr": "Choisissez un chemin pour runalyse"
+                },
+                "example": "/runalyse",
+                "default": "/runalyse"
+            },
+        ]
+    }
+}
